@@ -1,0 +1,34 @@
+\chapter{Conclusion and Future Work}
+\section{Conclusion}
+Port scanning is great solution for researchers to study and evaluate new types of vulnerabilities, to track many risk mitigation activities.
+On the other hand, it can be used by attackers to locate opened/vulnerable ports.
+So we did a detailed study on how these port scans generally behave by analysing the captured packets using network telescope.
+We analysed if port scans behavior will change if we combine network telescope with honeypot to capture the packets.
+Moreover we also compared the behavior of TCP and UDP port scans with some common metrics.\\\\
+We designed and implemented network forensic system to detect and study the behavior of port scanning attacks captured through first and second configuration of capturing system.
+Several metrics such as horizontal and vertical scans, geographic distribution of scan sources, popular targeted services,relationship between traffic rate and the time of the day etc were used for better analysis and comparison of port scanning packets received through two separate network telescope configurations.
+In addition to that, some of the above mentioned metrics were used for the comparison of TCP and UDP port scans.\\\\
+We initially compared number of TCP and UDP port scans from both datasets.
+We observed that TCP port scans are substantially greater in amount compared to UDP port scans during both first and second packet capturing period.
+In horizontal scanning, we could not see any apparent difference in the behavior between port scans detected during first and second time period. 
+However, number of horizontal scans keep reducing when number of
+distinct destination IPs scanned by scan source increases in both datasets.
+In vertical scanning, we could see an increase in vertical scanning activities in general in packets captured through second configuration compared to packets captured through first configuration.
+Moreover, we noticed a large amount of small scans while only few number of large scans.\\\\
+Another interesting metric for the comparison of port scans from two datasets is ports targeted in TCP and UDP scans.
+It is evident from the analysis that, there is an increase in number of TCP and UDP ports scanned at second stage in respect to number of ports scanned at first stage.
+In addition to that, we observed most actively scanned TCP and UDP ports during both time periods did not change much.
+We also analysed relationship between traffic and time of the day
+for TCP and UDP port scans from both datasets.
+It is evident from the results we obtained that, TCP and UDP port scans do not show a correlation between traffic and time of the day.
+However, TCP port scanning is a constant activity while UDP port scans are not very frequent as TCP port scanning activity.
+Another property we analysed is how port scan source IP addresses are geographically distributed around the world.
+We noticed that port scans are a global phenomena and it originate from a multitude of locations across the world and seem to be correlated only with accessibility of the Internet.
+\section{Future Work}
+While we shed light on the general behavior of port scanning activity , there stay a few open inquiries surrounding detection of port scans and protective mechanisms.
+While we used two separate methods to correlate distributed scanners, it remains an open
+research problem to detect and correlate distributed scanning events efficiently.
+In this thesis work, we focused on scanning detection within the IPv4 address space.
+Port scanning detection on IPv6 address space remains an open problem, as does analyzing existing IPv6 scanning behavior.
+While, from the analysis, it was evident that majority of large port scans are originated from large hosting providers, it is in many cases hard to recognize the exact goal of the scanner beyond scanned protocol.
+Follow-up work is important to decide the subsequent activities of these scanners.

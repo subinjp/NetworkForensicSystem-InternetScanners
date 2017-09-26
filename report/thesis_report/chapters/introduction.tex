@@ -1,0 +1,45 @@
+\chapter{Introduction}
+Computer networks and systems have turned out to be vital instruments for current business.
+The amount of data that is stored and accessed by users throughout the world have been increased tremendously during last one decade.
+According to Cisco's Visual Networking Index initiative \cite{cisco}, it is estimated that, before the end of 2016, worldwide Internet traffic will achieve 1.1 zettabytes per year and by 2019, global traffic is anticipated to hit 2 zettabytes for every year.
+Much of this information is to some degree confidential and its protection is required.
+As the number of connected nodes on the Internet has been increased, the various malicious attempts to gain control of the network is also increased.
+Attackers use different networking tools like IP spoofing and Internet wide scanning to understand the vulnerabilities in the network.
+So it is essential to build network security monitor devices to help uncover attempts by attackers to gain unauthorized access to computer networks.
+This results to gain easy access to data stored in devices\\\\
+Internet wide scanning is a robust technique used by researchers to study and evaluate Internet.
+It has become popular in research field to learn new types of vulnerabilities, to track many risk mitigation activities.
+However such a powerful tool could be used by attackers to locate  opened/vulnerable ports.
+So it is important to do a systematic study on how these scanners behave by analysing the incoming connection requests from them.
+This can be achieved using a Network telescope \cite{caida} which captures received packets and analyse it.\\\\
+Network telescopes (NT) permit the capture of illegitimate data on a wider scale.
+In general, NT captures the incoming traffic from an unutilised or dark Internet address space.
+Network telescope is capable of detecting large scale of events with respect to the address spaces it monitors.
+If an NT is being assigned with more Internet address spaces, its resolution will be also high \cite{irvin}.
+
+
+% 	\section{Research Question}
+% 		%  1. a concise statement of the question that your thesis tackles 
+% 		%  2. justification, by direct reference to section 3 that your question is previously unanswered
+% 		%  3. discussion of why it is worthwhile to answer this question.
+	
+	\section{Problem Statement}
+	The volume of backscatter or Internet Background Radiation (IBR) \cite{pang2004characteristics}\cite{wustrow2010internet} has been increased excessively with the growth of Internet after its commercialisation in mid 1990s.
+	Despite of the fact that, this is partly due to the system misconfiguration, a significant portion of such traffic can be seen as the result of either deliberate attack or network scanning tools.
+	Moreover there has been an increase in spreading of malicious software or malware during recent years.
+	Thereby the volumes and intensity of what is deemed to be traffic with malicious intent arriving at the Internet hosts are also increased.\\\\
+	While Internet scanners can be used for many research purposes, there is a high chance of mistreating their high potential by attackers to enumerate the vulnerable ports in the Internet.
+	The aftermath of all these attacks is that systems and organisations exposed to the Internet are facing a greater level of risk than they had before.\\\\
+	Aiming at Internet scanner's detection, we developed a small network telescope. 
+    Packet capture took place during two different schedules.
+    We initially used active network telescope to capture the packets assuming that all the packets received by the network telescope are illegitimate packets.
+    The active network telescope is called so since it is capable of receiving the incoming traffic and just responds to it.
+    However, our configuration was designed in such a way that only port 22 was open and able to respond to the connection requests for accessing the dataset through SSH service.
+    The remaining ports were closed during the first stage and rejecting any incoming connection requests.
+	Since proposed system consists of limited IP address space, we later combined the initial system with honeypot to exploit the received connections by sending vulnerable replies.
+	The honeypot was setup in such a way that it responds and process the requests to entire TCP network range and some UDP services with a legitimate service-like behavior.
+	The main goal of the thesis is to analyse the received packets from the two previously mentioned setups and check if it is feasible to identify a pattern depending on the behavior of these scanners and transport layer protocols used to send the packets.
+	Moreover it is also important to compare the obtained results of the initial configuration with the latter structure and check if the behavior has been changed.
+	
+    
+	

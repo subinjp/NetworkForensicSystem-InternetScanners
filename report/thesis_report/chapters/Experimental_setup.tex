@@ -1,0 +1,40 @@
+\chapter{Experimental Setup}
+Data used as the basis for the analysis has been collected using two different experiments conducted at different time spans.
+This chapter discusses these experimental procedures and the setup of network telescope used to collect the data.
+The primary source of data was captured using the network telescope configured in the
+disco department.\\\\
+The network telescope was comprised of an independently routed 25 IP addresses from the same /24 (Class C network) sized netblock.
+It is relatively very small compared to the network telescope used by the CAIDA \cite{caida}, consisting of IP addresses from single /8 network block.
+Even though previous researches \cite{pang2004characteristics}\cite{wustrow2010internet} acknowledged that a large network address space is needed to get meaningful results, we attempt to examine if the comparable results can be obtained using relatively very small address space.\\\\
+The packet capturing process took place in two stages. 
+In the first stage, the network telescope was designed as active in such a way that it does not send anything unless it receives a request.
+An active network telescope is capable of receiving the incoming packets and just responding to it.
+The main difference between the active and passive network telescope is that, passive network telescope has no means of responding to any packets.
+The active telescope is able to complete the 3-way TCP handshake required to receive TCP payloads, this however is not possible in passive network telescope.
+However we kept port 22 open to able respond to the connection requests for accessing the dataset through SSH service.
+In the second stage, the network telescope was associated with T-Pot, a multi-honeypot platform system from Deutsche Telekom.
+T-Pot provides honeypot system to the entire range of TCP network as well as to some UDP services.
+It is based on a vanilla Ubuntu 14.04.02 ISO image.\\\\
+The datasets of significance utilized in this thesis comprised of 101 million packets
+collected at two different phases.
+The work in this thesis considered exclusively network traffic received from the IPv4 address space.\\\\
+The telescope used in both stages was  based on hardware running the Ubuntu-16.04.4, a flavor of Linux kernel.
+It is configured to run inside the vmware virtualization environment and the CPU is  Intel(R) Xeon(R) CPU E5-2620 with a base frequency of 2.00GHz.
+The disk space available for storing the captured packets was provided by a single \SI{190} GB hard disk.
+The capturing process took place for 20 days to be precise 450 hours during both stages to have a meaningful comparison. \\\\
+In the first phase, the network telescope  was  designed  as  active  in  such  a  way  that  it just replies to any requests received by it.
+Packet capturing program written in C was used to capture the packets. 
+Files were rotated on a daily basis because of the limited disk space. 
+We stored the packets in separate files for each IP addresses to simplify the further analysis process.
+Capture files were created using a time-stamp in the file name in the form of word 'capture' together with last eight bits of each host IP address.
+These capture files were regularly rotated and compressed.
+We collected the packets for the first phase from 12 January 2017 to 31 January 2017.
+The packets captured during this period was over 49 million packets.
+These packets were transferred to the analysis module for further analysis, without doing any processing on the capture module.\\\\
+In the second phase, network telescope was integrated with T-Pot,  a multi-honeypot platform system from Deutsche Telekom. 
+T-pot depends on full fledged honeypot daemons, devices for attack submission and intrusion detection system (IDS).
+By using T-Pot, the whole TCP range as well as some of the UDP services can act as honeypot, thereby we can redirect all incoming packets to most appropriate honeypot daemons in order to respond and handle it \cite{tpot}.
+We used the same packet capturing program written in C to capture the packets.
+Due to unprecedented incident, packet capturing program got crashed during capturing period.
+Thus we collected the packets in the second phase from 13 March 2017 to 23 March 2017 and resumed the capturing process from 28 April 2017 to 5 April 2017.
+The packets collected during this period was over 52 million packets.

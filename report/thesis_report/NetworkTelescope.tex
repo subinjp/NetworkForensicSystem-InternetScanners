@@ -1,0 +1,141 @@
+\documentclass[a4paper,titlepage]{scrbook}
+\usepackage[toc,page]{appendix}
+
+% encoding
+\usepackage[utf8]{inputenc}
+
+% look
+\usepackage{scrlayer-scrpage}
+
+% for own column layouts
+\usepackage{array}
+
+% graphics
+\usepackage{graphicx}
+\usepackage[labelfont=bf, font=bf]{caption}
+\usepackage{subfig}
+% colors
+\usepackage[usenames,dvipsnames]{color}
+% test solid conics
+\usepackage{pst-solides3d}
+% math symbols
+\usepackage{amssymb, amsmath, amsfonts}
+\usepackage{textcomp, gensymb,mathtools}
+\usepackage{siunitx}
+\usepackage{listings}
+%\usepackage{txfonts,pxfonts}
+
+
+%math theorems
+\usepackage{pdfpages}
+\usepackage{makecell}
+\usepackage[]{algorithm2e}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\newtheorem{theorem}{Theorem}[section]
+% tables
+\usepackage{multirow}
+
+\usepackage[
+  pdftex,colorlinks=false,
+  hypertexnames=false,pdfstartview=FitH,
+  linkcolor=black,citecolor=black,
+  urlcolor=black,pdfborder={0 0 0}
+]{hyperref}
+\usepackage{bookmark}
+
+% own marginpar
+\let\oldmarginpar\marginpar
+\renewcommand\marginpar[1]{\oldmarginpar{\tiny #1}}
+
+\DeclareFontFamily{OT1}{pzc}{}
+\DeclareFontShape{OT1}{pzc}{m}{it}{<-> s * [1.10] pzcmi7t}{}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\title{TitleYetToDecide}
+\subtitle{}
+\author{Subin Joseph\\392292}
+\subject{Master Thesis}
+%\date{January 2, 2013}
+
+
+% tikz
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+
+\begin{document}
+
+\input{chapters/titlepage.tex}
+
+
+\input{chapters/abstract.tex}
+\input{chapters/Zusammenfassung.tex}
+\input{chapters/Eidesstattliche.tex}
+
+
+
+
+%\chapter*{Declaration of Academic Honesty}
+%Hereby I declare that the present thesis is drawn up after MPO Elektrotechnik und Informationstechnik by myself without help of third parties but the support of my supervisor, that all used sources and tools including the internet are completely and exactly mentioned, and that everything is marked which is taken unchanged, shortened or analogous from other literature.
+%
+%\vspace{3cm}
+%\noindent
+%\begin{tabular}{p{0.45\textwidth}p{0.45\textwidth}}
+% \rule{0.4\textwidth}{1pt} & \rule{0.4\textwidth}{1pt}\\
+% Place, Date & Carolina Pereira Nogueira
+%\end{tabular}
+
+\newpage
+
+\pagenumbering{Roman}
+\setcounter{page}{0}
+\tableofcontents
+\clearpage
+
+\setcounter{page}{0}
+\pagenumbering{arabic}
+
+
+\input{chapters/introduction.tex}
+\input{chapters/Background.tex}
+\input{chapters/Related_work.tex}
+\input{chapters/Design.tex}
+\input{chapters/Implementation.tex}
+\input{chapters/Experimental_setup.tex}
+\input{chapters/Evaluation.tex}
+\input{chapters/Conclusion.tex}
+
+%
+
+%% Literature
+%% \clearpage
+\bibliographystyle{IEEEtran}
+\bibliography{literature.bib}
+
+%\cleardoublepage
+%\phantomsection
+%\addcontentsline{toc}{chapter}{Lists}
+%\part*{Glossary and Lists}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+
+%\newpage
+%\part{Appendices}
+%\begin{appendices}
+%\addcontentsline{toc}{section}{Obtaining quadratic form of a hyperbola from foci and length of semi-major axis}
+%\input{chapters/converting_hyperbolas_eq.tex}
+%\end{appendices}
+
+
+
+\end{document}

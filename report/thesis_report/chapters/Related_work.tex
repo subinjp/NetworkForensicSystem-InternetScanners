@@ -1,0 +1,45 @@
+\chapter{Related Work}\label{chap:Background and Related Work}
+    A large number of materials have been published relating to the applications and use of Network Telescopes as research tools.
+    NT have been used for different research purposes including malware characterization, distributed denial of service, network scanning during previous years.
+    This  chapter  addresses the recent researches in the field of internet scanning, network telescope and network traffic analysis.
+    \section{Malware Characterization} 
+    Network telescopes have been utilized effectively to portray malware distribution, and propagation.
+    Most of the Internet worms spread by randomly generating an IP address as their destination address.
+    Then it sends the worm to these IP addresses in the hope that it is used by some vulnerable computers.
+    Since network telescope is routed, there is a probability that it also receives probes from hosts infected with worms.
+    There by network telescope captures these infection attempts and analyses it.
+    Conficker worm \cite{porras2009conficker} has been examined by the researchers by collecting data on network telescope in gaining better understanding about this worm \cite{irwin2012network}.
+    The traffic produced by the Witty worm has been first examined by Shannon and Moore in 2004 \cite{shannon2004spread}.
+    \section{Distributed Denial of Service (DDoS)}
+    Network telescopes can be used to observe the distribute denial of service attacks.
+    Attackers use fake IP addresses as the source IP address and send it to the victims.
+    Since the victims are not able to distinguish between incoming requests from an attacker and legitimate inbound requests, it replies back to these source IP addresses considering it as legitimate connection requests.
+    When the attacker uses the IP addresses in the network telescope IP address space for spoofing, NT can observe the response targeted for the computer that does not exit. 
+    NT monitors these unsolicited responses and identify the denial of attack victims, and get the information about the types of applications the attacker targets, volume of attack, the location and bandwidth of the victims.
+    The idea of monitoring background traffic started from CAIDA's network telescope in 2000 \cite{caida}.
+    The backscatter datasets provided by CAIDA have been utilised for many legitimate research purpose as well as to understand the vulnerabilities of the network telescope.
+    Many other notable  works have been published, which utilises network telescopes for understanding this type of traffic \cite{moore2006inferring}\cite{stavrou2005websos}\cite{kompella2004scalable}\cite{pouget2008understanding}.
+    \section{Network Scanning }
+    Network telescope have been applied in gaining better understanding about the traffic sent by the network scanners.
+    The one of the first comprehensive works in this area have been conducted by Pang in 2004 \cite{pang2004characteristics}.
+    It examines the most frequently scanned protocols in addition to different aspects of IBR.
+    Wustrow et al. \cite{wustrow2010internet} provided a valuable insight in to Internet background radiation by updating the work done by Pang.
+    They noticed a rise in scan traffic intended for well known ports such as telnet (TCP/23) and SSH (TCP/22).
+    Furthermore an increased scanning activity reported on port 445 (SMB over IP) because of Conficker.\\\\
+    The analysis by considerable amount of research works showed an increase in distributed botnet scanning during last decade \cite{leckie2002probabilistic}\cite{schechter2004fast}\cite{jung2004fast}.
+    The recent study by Durumeric \cite{durumeric2014internet} implements a large network telescope to analyze the behavior of Internet scanning and identify the broad behavior of scanning activity.
+    Moreover it shows a wide perspective of target protocols, the existing scanning methods, the intention of scanning, the source of scanning activity, and software they use for scanning.\\\\
+    Several port scanning detection mechanisms have been developed during the previous years.
+    However many of the past works relied up on a large network telescope consists of wide range of IP addresses.
+    Moreover most of the previous works used passive network telescope which is  capable of receiving incoming traffic and has no means of responding to any packets.\\\\
+    Our research basically varies from the previous works regarding the setting up of network telescope.
+    Multiple factors need to be considered while configuring network telescope.
+    The range of IP addresses assigned and category of network telescope are the two elements we considered while setting up the network telescope.
+    Here we used considerably smaller network telescope which consists of 25 IP addresses and configured it both as active network telescope and network telescope with honeypot system during the data collection period.
+    Our research work mainly focuses on the feasibility of port scanning detection from very small network telescope.
+    Furthermore it analyses the received packets from the two separately configured network telescopes and check if the behavior is different in each configuration.
+    
+    
+    
+    
+ 

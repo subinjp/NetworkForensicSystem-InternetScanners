@@ -1,0 +1,26 @@
+\chapter*{Abstract}
+\thispagestyle{empty}
+As the Internet technology advances and number of connected nodes on the Internet
+become very high, network security has turned out to be  one of the most important factors for organizations to consider.
+Port scanning is one of the networking tools attackers use to understand the vulnerabilities in the network.
+It is a robust technique used to discover the services running on a target machine.
+While port scanners can be used for many research purposes, there is a high chance
+of mistreating their high potential by attackers to enumerate the vulnerable ports in the
+Internet. 
+So, it is important to do a systematic study on how these scanners behave by analysing the incoming connection requests from them.\\\\
+Aiming at Internet scanner's detection, we develop a network telescope to capture packets.
+Network telescope is able to provide a sampled view of the Internet with regard to
+illegitimate traffic.
+It accomplishes this by monitoring ranges of unused internet address space where no active services or servers reside. 
+Our objective is to check whether it is possible to identify the internet scanners and get meaningful data about behavior of these scanners using the small network telescope. 
+Packet capturing take place during two different schedules.
+We initially use passive network telescope to capture the packets.
+Here ports are closed and rejecting any incoming connection requests.
+Since network telescope consists of limited IP address space, we latter combine the initial system with honeypot to exploit the received connections by sending vulnerable replies.\\\\
+This thesis focuses on the analysis, manipulation and visualisation of the packets captured from the two above mentioned setups and check if it is feasible to identify a pattern depending on the behavior of port scanners and transport layer protocols used to send the packets.
+Moreover, it is also important to compare the obtained results of the initial configuration with the latter structure and check if the behavior has been changed.
+Analysis was achieved by selecting correct suitable metrics that were used
+to extract information from captured traffic. 
+Through correct visualisation, we could infer the relevant information from obtained results of the analysis for further research. 
+
+ 
